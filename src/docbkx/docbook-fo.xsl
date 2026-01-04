@@ -7,10 +7,10 @@
 	<xsl:import href="urn:docbkx:stylesheet" />
 
 	<xsl:param name="paper.type">A4</xsl:param>
-	<xsl:param name="title.font.family" select="'Times New Roman'"></xsl:param>
-	<xsl:param name="monospace.font.family" select="'Arial'"></xsl:param>
-	<xsl:param name="body.font.family" select="'Arial'"></xsl:param>
-	<xsl:param name="symbol.font.family" select="'Arial'"></xsl:param>
+	<xsl:param name="title.font.family" select="'DejaVuSansCondensed'"></xsl:param>
+	<xsl:param name="monospace.font.family" select="'DejaVuSansCondensed'"></xsl:param>
+	<xsl:param name="body.font.family" select="'DejaVuSansCondensed'"></xsl:param>
+	<xsl:param name="symbol.font.family" select="'DejaVuSansCondensed'"></xsl:param>
 	<xsl:param name="generate.index" select="0"></xsl:param>
 	<xsl:param name="l10n.gentext.default.language" select="'ru'"></xsl:param>
 	<xsl:param name="toc.max.depth" select="0"></xsl:param>

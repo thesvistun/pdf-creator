@@ -10,32 +10,75 @@
     <packaging>pom</packaging>
     <name>PDF Creator</name>
     <description>Creates a PDF document from DocBook XML</description>
+    <properties>
+        <fonts.dir>/usr/share/fonts/dejavu</fonts.dir>
+        <docbkx.version>2.0.17</docbkx.version>
+    </properties>
     <build>
         <sourceDirectory>src/docbkx</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>com.agilejava.docbkx</groupId>
+                <artifactId>docbkx-fop-support</artifactId>
+                <version>${docbkx.version}</version>
+                <executions>
+                    <execution>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                    <configuration>
+                        <ansi>true</ansi>
+                        <sourceDirectory>${fonts.dir}</sourceDirectory>
+                    </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.agilejava.docbkx</groupId>
                 <artifactId>docbkx-maven-plugin</artifactId>
-                <version>2.0.10</version>
+                <version>${docbkx.version}</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>generate-pdf</goal>
                         </goals>
-                        <phase>generate-sources</phase>
+                        <phase>compile</phase>
                     </execution>
                 </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.docbook</groupId>
-                        <artifactId>docbook-xml</artifactId>
-                        <version>4.4</version>
-                        <scope>runtime</scope>
-                    </dependency>
-                </dependencies>
                 <configuration>
                     <highlightSource>2</highlightSource>
                     <foCustomization>${project.basedir}/src/docbkx/docbook-fo.xsl</foCustomization>
+                    <fonts>
+                        <font>
+                            <name>DejaVuSansCondensed</name>
+                            <style>normal</style>
+                            <weight>normal</weight>
+                            <embedFile>${fonts.dir}/DejaVuSansCondensed.ttf</embedFile>
+                            <metricsFile>${basedir}/target/fonts/DejaVuSansCondensed-metrics.xml</metricsFile>
+                        </font>
+                        <font>
+                            <name>DejaVuSansCondensed</name>
+                            <style>normal</style>
+                            <weight>bold</weight>
+                            <embedFile>${fonts.dir}/DejaVuSansCondensed-Bold.ttf</embedFile>
+                            <metricsFile>${basedir}/target/fonts/DejaVuSansCondensed-Bold-metrics.xml</metricsFile>
+                        </font>
+                        <font>
+                            <name>DejaVuSansCondensed</name>
+                            <style>italic</style>
+                            <weight>normal</weight>
+                            <embedFile>${fonts.dir}/DejaVuSansCondensed-Oblique.ttf</embedFile>
+                            <metricsFile>${basedir}/target/fonts/DejaVuSansCondensed-Oblique-metrics.xml</metricsFile>
+                        </font>
+                        <font>
+                            <name>DejaVuSansCondensed</name>
+                            <style>italic</style>
+                            <weight>bold</weight>
+                            <embedFile>${fonts.dir}/DejaVuSansCondensed-BoldOblique.ttf</embedFile>
+                            <metricsFile>${basedir}/target/fonts/DejaVuSansCondensed-BoldOblique-metrics.xml</metricsFile>
+                        </font>
+                    </fonts>
                 </configuration>
             </plugin>
         </plugins>

@@ -2,3 +2,15 @@ extends: default
 role:
   red:
     font-color: #FF0000
+
+base:
+  font-family: OpenSans
+
+font:
+  catalog:
+    merge: false 
+    OpenSans:
+      normal: OpenSans/OpenSans_SemiCondensed-Regular.ttf
+      italic: OpenSans/OpenSans_SemiCondensed-Italic.ttf
+      bold: OpenSans/OpenSans_SemiCondensed-Bold.ttf
+      bold_italic: OpenSans/OpenSans_SemiCondensed-BoldItalic.ttf

@@ -1,14 +1,52 @@
+:hide-uri-scheme:
+
 [cols="3a,1a", frame=none, grid=none]
 |===
-|== Main Block
+// Main Section
+|== NAME
 
-[.red]
-This is your primary content in red.
+[.blue]
+Role
+|
 
-More paragraphs here.
-|== Sidebar
+|=== SUMMARY
 
-* Tip
-* Notes
-* Links
+Text
+
+=== WORK EXPERIENCE
+
+==== Role at Company \| City, Country
+
+[.blue]
+Month year &#8212; Month year
+
+// Sidebar
+|=== CONTACT
+
+phone
+
+[.blue]
+email
+
+[.blue]
+https://github.com/username
+
+[.blue]
+https://linkedin.com/in/username
+
+=== SKILLS
+
+Skill 1
+
+Skill 2
+
+=== EDUCATION
+
+==== Univercity \| City, Country
+
+[.blue]
+Month year &#8212; Month year
+
+Major: Major name
+
 |===
